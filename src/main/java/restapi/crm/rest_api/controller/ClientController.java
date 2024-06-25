@@ -17,5 +17,6 @@ public class ClientController {
 
   @GetMapping
   public List<Customers> listar() {
-    
+    return customersRepository.findAll();
   }
+}
