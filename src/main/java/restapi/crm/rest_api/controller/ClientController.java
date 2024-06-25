@@ -2,15 +2,18 @@ package restapi.crm.rest_api.controller;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import restapi.crm.rest_api.model.Customers;
+import restapi.crm.rest_api.repository.CustomersRepository;
 
 @RestController
 @RequestMapping("/clientes")
 public class ClientController {
+
+  @Autowired
+  private CustomersRepository customersRepository;
 
   @GetMapping
   public List<Customers> listar() {
