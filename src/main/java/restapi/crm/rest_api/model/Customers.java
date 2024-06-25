@@ -7,8 +7,13 @@ public class Customers {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
   @Column(nullable = false) // not null!
   private String name;
+
+  public Long getId() {
+    return id;
+  }
 
   public String getName() {
     return name;
@@ -42,5 +47,4 @@ public class Customers {
       return false;
     return true;
   }
-
 }

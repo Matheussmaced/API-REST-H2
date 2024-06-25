@@ -19,4 +19,9 @@ public class ClientController {
   public List<Customers> listar() {
     return customersRepository.findAll();
   }
+
+  @PostMapping
+  public Customers adding(@RequestBody Customers customers) {
+    return customersRepository.save(customers);
+  }
 }
